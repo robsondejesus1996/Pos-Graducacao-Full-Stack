@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+    <!--<style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div{
+            height: 100px;
+            background-color: red;
+            margin: 35px;
+            padding: 35px;
+            border: solid 20px black;
+        }
+    </style>
+
+-->
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+           
+        }
+       .destaque{
+        display: block;
+        width: 100%;
+       }
+
+       div{
+        display: inline-block;
+        width: calc(33% - 16px);
+        background-color: #ddd;
+        vertical-align: top;
+        margin: 8px;
+        padding: 10px;
+        border: 1px solid #777;
+        border-radius: 10px;
+        box-sizing: border-box;
+       }
+
+       div p img {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+       }
+    </style>
+  </head>
+  <body>
+    <h1>Portal de Noticias</h1>
+    <img class="destaque" src="https:source.unsplash.com/random/600x270?sig=0" alt="" />
+    <section>
+      <div>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>
+          <img src="https:source.unsplash.com/random/200x170?sig=0" alt="" />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa atque
+          hic vero libero animi nihil nam saepe neque, blanditiis ratione.
+        </p>
+      </div>
+      <div>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>
+          <img src="https:source.unsplash.com/random/200x170?sig=0" alt="" />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa atque
+          hic vero libero animi nihil nam saepe neque, blanditiis ratione.
+        </p>
+      </div>
+      <div>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>
+          <img src="https:source.unsplash.com/random/200x170?sig=0" alt="" />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa atque
+          hic vero libero animi nihil nam saepe neque, blanditiis ratione.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
