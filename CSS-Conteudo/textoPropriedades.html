@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texto Propriedades</title>
+    <style>
+        #p1 {
+            background-color: aquamarine;
+            font-family: times;
+            line-height: normal;
+        }
+        #p2{
+            background-color: lightpink;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        #p3{
+            background-color: greenyellow;
+            font-family: monospace;
+            line-height: 300%;
+            color: red;
+        }
+
+        .bolder{
+            font-weight: bolder;
+        }
+        .smallcaps {
+            font-variant: small-caps;
+        }
+    </style>
+  </head>
+  <body>
+    <p id="p1">Paragrafo com espacamento normal</p>
+    <span>Duis as consequant orci</span>
+
+    <p id="p2">Paragrafo com espacamento de 1,6</p>
+    <span class="smallcaps">Texto com font-variant: small-caps</span>
+
+    <p id="p3">Paragrafo vermelhor com 300% de espacamento.</p>
+    <span class="bolder">Texto com font-weight: bolder. </span>
+  </body>
+</html>
