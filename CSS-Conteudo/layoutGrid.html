@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Grid</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "cabecalho"
+                    "conteudo"
+                    "periferico"
+                    "rodape";
+        grid-gap: 5px 0px;            
+      }
+
+
+      header{
+        grid-area: cabecalho;
+      }
+
+      .logo {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .content{
+        grid-area: conteudo;
+      }
+
+      .menu-principa {
+        display: block;
+      }
+
+      .menu-principal > ul {
+        list-style: none;
+        background: lightgray;
+        padding: 5px;
+      }
+
+      .menu-principa > ul > li {
+        display: block;
+        padding: 10px;
+        background: white;
+      }
+
+      .menu-principal > ul > li {
+        display: block;
+        padding: 10px;
+        background: white;
+        border-bottom: 1px solid gray;
+      }
+
+      .menu-principal > ul > li:hover {
+        background: blue;
+        color: white;
+      }
+
+      aside {
+        grid-area: periferico;
+      }
+
+      aside > .box-lateral {
+        background: lightgray;
+        box-shadow: 2px 2px gray;
+        padding-bottom: 20px;
+      }
+
+      .box-noticia p,
+      .box-noticia h2 {
+        margin-top: 2px;
+      }
+
+      .box-noticia h2 {
+        margin-bottom: 0;
+      }
+
+     
+
+      .logo{
+        width: 220px;
+        float: left;
+      }
+
+      .menu-principal{
+        float: right;
+      }
+
+      .menu-principal > ul > li{
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <img
+          src="http://source.unsplash.com/random/200x120"
+          alt=""
+          class="logo"
+        />
+        <nav class="menu-principal">
+          <ul>
+            <li>Opcao 1</li>
+            <li>Opcao 2</li>
+            <li>Opcao 3</li>
+            <li>Opcao 4</li>
+            <li>Opcao 5</li>
+          </ul>
+        </nav>
+      </header>
+
+      <aside>
+        <div class="box-lateral">
+          <h2>Pesquisa</h2>
+          <input type="text" name="" id="" />
+          <button>OK</button>
+        </div>
+        <div class="box-lateral">
+          <h2>Categorias</h2>
+          <ul>
+            <li>Categoria 1</li>
+            <li>Categoria 2</li>
+            <li>Categoria 3</li>
+            <li>Categoria 4</li>
+            <li>Categoria 5</li>
+            <li>Categoria 6</li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="content">
+        <div class="box-noticia">
+          <h2>Noticia 1</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
+            consectetur harum ullam numquam laboriosam nostrum dicta architecto
+            est, quasi hic laudantium sunt nam error repellat debitis facere
+            nobis eum at provident excepturi velit. Odit itaque nostrum
+            voluptate pariatur placeat, minus voluptatibus qui quia sapiente
+            eveniet.
+          </p>
+        </div>
+
+        <div class="box-noticia">
+          <h2>Noticia 2</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
+            consectetur harum ullam numquam laboriosam nostrum dicta architecto
+            est, quasi hic laudantium sunt nam error repellat debitis facere
+            nobis eum at provident excepturi velit. Odit itaque nostrum
+            voluptate pariatur placeat, minus voluptatibus qui quia sapiente
+            eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ipsam, alias amet! Perspiciatis non quasi, ratione sapiente modi
+            saepe esse maxime!
+          </p>
+        </div>
+
+        <div class="box-noticia">
+          <h2>Noticia 3</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
+            consectetur harum ullam numquam laboriosam nostrum dicta architecto
+            est, quasi hic laudantium sunt nam error repellat debitis facere
+            nobis eum at provident excepturi velit. Odit itaque nostrum
+            voluptate pariatur placeat, minus voluptatibus qui quia sapiente
+            eveniet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
