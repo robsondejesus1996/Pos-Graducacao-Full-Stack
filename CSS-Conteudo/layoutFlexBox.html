@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Flexbox</title>
+
+    <style>
+        header{
+            background: lightgreen;
+        }
+
+        .container{
+           background: lightgray; 
+           display: flex;
+           flex-flow: row;
+           flex-wrap: wrap;
+        }
+
+        .box-noticia{
+            width: 30%;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .noticia-destaque{
+            flex-grow: 2;
+        }
+
+        .not4{
+            order: 1;
+
+        }
+
+        .not1, .not3, .not5{
+            order: 2;
+        }
+
+        .not2{
+            order: 3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="http://source.unsplash.com/random/200x120" alt="">
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="box-noticia not1">
+                <h2>Noticia 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sit magni commodi deleniti nobis possimus dolore aut non, incidunt placeat eveniet, in quas, facilis itaque.</p>
+            </div>
+
+            <div class="box-noticia not2 noticia-destaque">
+                <h2>Noticia 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sit magni commodi deleniti nobis possimus dolore aut non, incidunt placeat eveniet, in quas, facilis itaque.</p>
+            </div>
+            
+            <div class="box-noticia not3">
+                <h2>Noticia 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sit magni commodi deleniti nobis possimus dolore aut non, incidunt placeat eveniet, in quas, facilis itaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam praesentium nisi earum nostrum quod omnis, possimus saepe. Praesentium, expedita debitis!</p>
+            </div>
+
+            <div class="box-noticia not4 noticia-destaque">
+                <h2>Noticia 4</h2>
+                <p>Lorem ipsum dolor sit amet, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex dignissimos id, fuga voluptatibus excepturi tenetur? Reiciendis eligendi aliquam tempora esse.consectetur adipisicing elit. Atque sit magni commodi deleniti nobis possimus dolore aut non, incidunt placeat eveniet, in quas, facilis itaque.</p>
+            </div>
+
+            <div class="box-noticia not5">
+                <h2>Noticia 5</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque sit magni commodi deleniti nobis possimus dolore aut non, incidunt placeat eveniet, in quas, facilis itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi explicabo quae, tempore sit minima consequuntur!</p>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
