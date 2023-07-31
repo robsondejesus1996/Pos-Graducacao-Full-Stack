@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function ola() {
+        alert("Ola");
+      }
+
+      function entrou() {
+        alert("Entrou");
+      }
+
+      function saiu() {
+        alert("Tchau");
+      }
+
+      window.onload = () => {
+        bt.onclick = () => alert("Button com id");
+      };
+
+      window.onload = () => {
+        bt.addEventListener("click", () => alert("Ola mundo addEventListener"));
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="ola()">Botao</button>
+
+    <p onmouseover="entrou()" onmouseout="saiu()">Ola mundo</p>
+
+    <button id="bt">Evento</button>
+  </body>
+</html>
