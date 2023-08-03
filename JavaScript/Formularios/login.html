@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      onload = () => {
+
+        nome.onchange = () =>{
+            if(nome.value ==""){
+                console.log("Nome nao pode ficar em branco")
+            }
+            console.log(`Nome alterado para ${nome.value}`)
+
+            if(nome.value !='' || senha.value !=''){
+                btn.disabled = false;
+            }else{
+                btn.disabled = true;
+            }
+        };
+
+        senha.onchange = () =>{
+            console.log(`Senha alterada para ${senha.value}`)
+        }
+
+
+        login.onsubmit = () => {
+          if (nome.value == "" || senha.value == "") {
+            alert("Os campos nome e senha são obriatorios");
+            return false;
+          }
+          return true;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <form id="login" action="loginV.html">
+      <p>
+        <label for="nome">Nome:</label>
+        <input type="text" name="name" id="nome" />
+      </p>
+
+      <p>
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" />
+      </p>
+
+      <p>
+        <button type="submit" disabled id="btn">Entrar</button>
+      </p>
+    </form>
+  </body>
+</html>
