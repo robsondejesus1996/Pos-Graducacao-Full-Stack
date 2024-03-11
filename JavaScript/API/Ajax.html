@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax</title>
+    <script>
+      function ajax() {
+        let xhttp = null;
+        try {
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (xhttp.readyState === 4) {
+              if (xhttp.status == 200) {
+                let usuario = JSON.parse(xhttp.responseText);
+                nome.innerHTML = usuario.nome;
+                idade.innerHTML = usuario.idade;
+                filhos.innerHTML = usuario.filhos.map((e) => e.nome).join(", ");
+              } else {
+                console.warning("status: " + xhttp.status);
+              }
+            }
+          };
+
+          xhttp.open("GET", "dados.json", true);
+          xhttp.send();
+        } catch (e) {
+          alert("seu navegador nao suporta Ajax");
+        }
+      }
+      ajax();
+    </script>
+  </head>
+  <body>
+    <h1>Java Script</h1>
+    <button onclick="ajax()">Carrega Usuario</button>
+
+    <dl>
+      <dt>Nome:</dt>
+      <dd id="nome"></dd>
+
+      <dt>Idade:</dt>
+      <dd id="idade"></dd>
+
+      <dt>Filhos:</dt>
+      <dd id="filhos"></dd>
+    </dl>
+    <!-- Code injected by live-server -->
+    
+  </body>
+</html>

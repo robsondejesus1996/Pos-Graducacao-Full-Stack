@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let usuarios ={
+            "nome": "João",
+            "idade": 35,
+            "filhos":[
+                {
+                    "nome": "Ana", 
+                    "idade": 13
+                },
+                {
+                    "nome": "Pedro", 
+                    "idade": 10
+                }
+            ], 
+            casado: true
+        };
+
+        let strUsuarios = JSON.stringify(usuarios)
+        console.log(1, usuarios, typeof usuario)
+        console.log(2, strUsuarios, typeof strUsuarios)
+
+        let usuario2 = JSON.parse(strUsuarios)
+        console.log(3, usuario2, typeof usuarios)
+    </script>
+    
+</body>
+</html>

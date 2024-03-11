@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let usuario ={
+            "nome": "João",
+            "idade": 35,
+            "filhos":[
+                {
+                    "nome": "Ana", 
+                    "idade": 13
+                },
+                {
+                    "nome": "Pedro", 
+                    "idade": 10
+                }
+            ], 
+            casado: true
+        };
+
+       localStorage.setItem("usuario", JSON.stringify(usuario))
+
+       let strUsario= localStorage.getItem('usuario')
+       console.log(strUsario, typeof strUsario)
+       let usuario2 = JSON.parse(strUsario)
+       console.log(usuario2, typeof strUsario)
+    </script>
+    
+</body>
+</html>

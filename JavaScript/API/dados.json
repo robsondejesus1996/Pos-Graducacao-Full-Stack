@@ -1,0 +1,15 @@
+{
+    "nome": "Robson",
+    "idade": 35,
+    "filhos":[
+        {
+            "nome": "Isabela", 
+            "idade": 5
+        },
+        {
+            "nome": "Fernadna", 
+            "idade": 2
+        }
+    ], 
+    "casado": true
+}
