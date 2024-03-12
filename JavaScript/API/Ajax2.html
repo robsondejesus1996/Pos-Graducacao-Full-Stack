@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax</title>
+    <script>
+      function ajax() {
+        let xhttp = null;
+        try {
+          xhttp = new XMLHttpRequest();
+
+          xhttp.onreadystatechange = function () {
+            
+            if (xhttp.readyState === 4) {
+                console.log("status: " + xhttp.status);
+                let objeto = JSON.parse(xhttp.responseText);
+                console.log(objeto)
+            }else{
+                console.warning('status' + xhttp.status)
+            }
+          };
+
+          let usuario = {
+            first_name: nome.value,
+            email: email.value
+          }
+
+          xhttp.open("POST", 'https://reqres.in/api/users', true);
+          xhttp.send(JSON.stringify(usuario));
+        } catch (e) {
+          alert("seu navegador nao suporta Ajax");
+        }
+      }
+      ajax();
+    </script>
+  </head>
+  <body>
+    <h1>Java Script</h1>
+    <p><button onclick="ajax()">Carrega Usuario</button></p>
+    <form>
+        <label for="name">Nome:</label><input id="nome" type="text"/><br>
+        <label for="email">Email:</label><input id="email" type="text"/>
+    </form>
+
+    <p id="resposta" style="border: thin solid black; padding: 2ex;"></p>
+    
+  </body>
+</html>
