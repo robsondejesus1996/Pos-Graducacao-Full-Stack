@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        onload = () => {
+            let geo = navigator.geolocation;
+            const geoCoords = function (p){
+                let lat = p.coords.latitude;
+                let lng = p.coords.longitude;
+                output.innerHTML = `Coordenadas: (${lat}; ${lng})`
+            };
+            const geoError = function(e){
+                console.log(e)
+            }
+            let watchID = geo.watchPosition(geoCoords, geoError);
+            console.log(watchID)
+            stWatch.onclick = () =>{
+                console.log(watchID)
+                geo.clearWatch(watchID);
+            }
+        }
+    </script>
+   
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <p id="output"></p>
+    <p> <button id="stWatch">Parar</button></p>
+    
+</body>
+</html>
