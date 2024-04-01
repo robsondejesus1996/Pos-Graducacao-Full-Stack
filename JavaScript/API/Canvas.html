@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        #desenho{
+            border: thin solid black;
+        }
+    </style>
+
+    <script>
+        onload = () =>{
+            if(desenho.getContext){
+                let ctx = desenho.getContext('2d');
+                ctx.fillRect(25,25,100,100);
+                ctx.clearRect(45,45,60,60);
+            }   
+        }
+
+    </script>
+</head>
+<body>
+
+    <h1>JS</h1>
+    <canvas id="desenho" width="300" height="150">
+        Seu navegador não suporta Canvas
+    </canvas>
+    
+</body>
+</html>

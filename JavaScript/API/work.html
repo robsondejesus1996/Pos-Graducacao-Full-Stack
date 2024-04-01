@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work</title>
+    <style>
+
+    </style>
+
+    <script>
+        let wk = new Worker('soma.js');
+
+        wk.postMessage([2,3]);
+
+        wk.onmessage = function (evento){
+            console.log(evento.data);
+        }
+
+    </script>
+</head>
+<body>
+
+    <h1>JS</h1>
+
+    
+</body>
+</html>
