@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #grafico{
+        border: thin solid black;
+        width: 600px;
+        height: 400px;
+      }
+
+      .barra{
+        fill: lightblue;
+        stroke: black;
+      }
+    </style>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"
       integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A=="
@@ -13,8 +25,24 @@
 
     <script>
       onload = () => {
-        d3.selectAll("p").data([10,20,30]);
-        
+        let dados = [156, 27, 115,44, 260, 133];
+        let svg = d3.select('#grafico');
+        let largura = parseInt(svg.style('width'));
+        let altura = parseInt(svg.style('height'));
+        let fnx = d3.scaleLinear()
+        .domain([0, d3.max(dados)])
+        .range([0, largura]);
+        let fny = d3.scaleLinear()
+        .domain([0, dados.length])
+        .range([0, altura]);
+
+        svg.selectAll('.barra')
+        .data(dados).enter()
+        .append('rect')
+        .attr('x', 0)
+        .attr('y', (d,i)=>fny(i))
+        .attr('width', (d)=>fnx(d))
+        .attr('height', fny(1)*0.9)
        
       };
     </script>
@@ -23,11 +51,7 @@
     <h1>D3Js</h1>
 
     
-      <p id="destaque">Paragrafo em destaque</p>
-    
-    
-      <p>Segundo paragrafo</p>
-      <p>Terceiro paragrafo</p>
+     <svg id="grafico"></svg>
     
   </body>
 </html>
