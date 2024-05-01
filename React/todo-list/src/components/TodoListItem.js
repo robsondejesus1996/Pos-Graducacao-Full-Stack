@@ -1,8 +1,12 @@
 export const TodoListItem = (props) => {
-    return(
-        <li>
-            <input type="checkbox" />
-            {props.item.name}
-        </li>
-    )
-}
+  return (
+    <li>
+      <input
+        type="checkbox"
+        checked={props.item.isCompleted}
+        onChange={(event) => props.onTaskChanged(event, props.item)}
+      />
+      {props.item.name}
+    </li>
+  );
+};
