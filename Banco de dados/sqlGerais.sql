@@ -30,5 +30,40 @@ select sum(salario) as soma, max(salario) as maior, min(salario) as menor, avg(s
 select count(*) from empregado; 
 
 
+select nomemp from empregado order by nomemp desc;
+
+select CodDepto, COUNT(*) as qtd, AVG(Salario) as sal
+from Empregado
+GROUP BY CodDepto;
+
+select P.CodProjeto, P.ProjNome, COUNT(*)
+from Projeto P, Trabalha_Em T
+where P.CodProjeto = T.CodProjeto 
+GROUP BY P.CodProjeto, P.ProjNome
+HAVING COUNT(*) >= 2
+
+
+//Consultas Aninhadas 
+select nomemp 
+from empregado
+where salario > all
+(select salario
+from empregado 
+where coddepto = 2);
+
+select nomemp 
+from empregado as e
+where e.matemp in 
+(select matemp
+from dependente 
+where e.sexo = sexo);
+
+
+
+//junções 
+select e.matemp as matriculaEm, e.nomemp as nomeEmp, d.nomdep as nomedep
+from empregado e join dependente d on d.matemp = e.matemp;
+
+
 
 
