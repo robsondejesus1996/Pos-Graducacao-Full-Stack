@@ -1,0 +1,10 @@
+# Ignorar todas as pastas node_modules
+**/node_modules
+
+# Outras regras de ignore podem ser adicionadas abaixo
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de build
+dist/
+build/
